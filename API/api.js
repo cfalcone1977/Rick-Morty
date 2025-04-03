@@ -8,10 +8,10 @@ export async function traerPersonajes(pagina) {
         if (data.status>=400){
                                          throw new Error(data.errorMessages[0]);
                              }
-        return data;// un objeto data con diferentes propiedades, otros objetos y arreglos.
+        return data;
     } catch (error) {
         console.log(error.message);
-        //console.error("Error al acceder a CUIT:",error.message);
+        //console.error("Error al acceder");
         return null;//si da error se devuelve null
     }
 }
