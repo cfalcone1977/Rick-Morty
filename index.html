@@ -31,12 +31,56 @@
                     </button>
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page">
-                    <button type="button" class="btn btn-dark">
-                      Busqueda
-                    </button>
-                  </a>
+                <li>
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      <input class="form-check-input me-1" type="checkbox" value="" id="filtradoGeneral">
+                      <label class="form-check-label stretched-link" for="filtradoGeneral">Filtrado</label>
+                    </li>
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      <input class="form-check-input me-0" type="radio" name="listGroupRadio" value="" id="estadoVivo">
+                      <label class="form-check-label" for="estadoVivo">Vivo</label>
+                    </li>
+                    <li class="list-group-item">
+                      <input class="form-check-input me-0" type="radio" name="listGroupRadio" value="" id="estadoMuerto">
+                      <label class="form-check-label" for="estadoMuerto">Muerto</label>
+                    </li>
+                    <li class="list-group-item">
+                      <input class="form-check-input me-0" type="radio" name="listGroupRadio" value="" id="estadoDesconocido">
+                      <label class="form-check-label" for="estadoDesconocido">Desconocido</label>
+                    </li>
+                  </ul>
+                <!--<div class="dropdown">
+                  <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Filtrar Estado
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a id='estadoVivo' class="dropdown-item" href="#">Vivo</a></li>
+                    <li><a class="dropdown-item" href="#">Muerto</a></li>
+                    <li><a class="dropdown-item" href="#">Desconocido</a></li>
+                  </ul>
+                </div>-->
+                 </ul>
+                </li>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <input class="form-check-input me-0" type="radio" name="listGroupRadio2" value="" id="generoFemenino">
+                    <label class="form-check-label" for="generoFemenino">Femenino</label>
+                  </li>
+                  <li class="list-group-item">
+                    <input class="form-check-input me-0" type="radio" name="listGroupRadio2" value="" id="generoMasculino">
+                    <label class="form-check-label" for="generoMasculino">Masculino</label>
+                  </li>
+                  <li class="list-group-item">
+                    <input class="form-check-input me-0" type="radio" name="listGroupRadio2" value="" id="generoSingenero">
+                    <label class="form-check-label" for="generoSingenero">Sin Genero</label>
+                  </li>
+                  <li class="list-group-item">
+                    <input class="form-check-input me-0" type="radio" name="listGroupRadio2" value="" id="generoDesconocido">
+                    <label class="form-check-label" for="generoDesconocido">Desconocido</label>
+                  </li>                  
+                </ul>
               </ul>
             </div>
           </div>
