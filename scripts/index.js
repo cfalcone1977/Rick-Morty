@@ -1,10 +1,13 @@
 import { traerPersonajes } from "../API/api.js"
-import { mostrarPersonajes, borrarTarjetas } from "../lib/manejopers.js"
+import { mostrarPersonajes, borrarTarjetas, contenedor } from "../lib/manejopers.js"
 import {habilitaDeshabilitaBoton} from "../lib/controles.js"
+
 
 
 const siguiente=document.getElementById('siguiente');
 const anterior=document.getElementById('anterior');
+const inputBuscar=document.getElementById('busqueda');
+const aceptarBusqueda=document.getElementById('aceptarBusqueda');
 
 const filtroGeneral=document.getElementById('filtradoGeneral');
 
@@ -23,6 +26,7 @@ let GENERO="";
 filtroEstadoVivo.disabled=true;
 filtroEstadoMuerto.disabled=true;
 filtroEstadoDesconocido.disabled=true;
+aceptarBusqueda.disabled=true;
 
 generoFemenino.disabled=true;
 generoMasculino.disabled=true;
@@ -33,8 +37,6 @@ generoDesconocido.disabled=true;
 
 
 let urlPersonajes="https://rickandmortyapi.com/api/character?page=1";
-
-//const urlFiltrado="https://rickandmortyapi.com/api/character/?gender=male&status=dead";
 
 let personajes= await traerPersonajes(urlPersonajes);
 habilitaDeshabilitaBoton(false,anterior);
@@ -199,6 +201,9 @@ if (STATUS==""){
                 urlPersonajes=`https://rickandmortyapi.com/api/character/?${GENERO}&${STATUS}`;
                      }
 personajes= await traerPersonajes(urlPersonajes);
+if (personajes.info.pages==1){
+                           habilitaDeshabilitaBoton(false,siguiente);  
+                             }                   
 mostrarPersonajes(personajes);
 console.log(personajes.info.next)    
 })
@@ -222,6 +227,9 @@ if (STATUS==""){
                 urlPersonajes=`https://rickandmortyapi.com/api/character/?${GENERO}&${STATUS}`;
                      }
 personajes= await traerPersonajes(urlPersonajes);
+if (personajes.info.pages==1){
+                habilitaDeshabilitaBoton(false,siguiente);  
+                             }                   
 mostrarPersonajes(personajes);
 console.log(personajes.info.next)    
 })
@@ -245,6 +253,9 @@ if (STATUS==""){
                 urlPersonajes=`https://rickandmortyapi.com/api/character/?${GENERO}&${STATUS}`;
                      }
 personajes= await traerPersonajes(urlPersonajes);
+if (personajes.info.pages==1){
+                     habilitaDeshabilitaBoton(false,siguiente);  
+                             }                   
 mostrarPersonajes(personajes);
 console.log(personajes.info.next)    
 })
@@ -268,9 +279,53 @@ if (STATUS==""){
                 urlPersonajes=`https://rickandmortyapi.com/api/character/?${GENERO}&${STATUS}`;
                      }
 personajes= await traerPersonajes(urlPersonajes);
+if (personajes.info.pages==1){
+                    habilitaDeshabilitaBoton(false,siguiente);  
+                             }                   
 mostrarPersonajes(personajes);
 console.log(personajes.info.next)    
 })
+
+inputBuscar.addEventListener('input',async ()=>{
+   console.log(inputBuscar.value);
+   if (inputBuscar.value!=""){
+                           aceptarBusqueda.disabled=false;
+                           inputBuscar.value = inputBuscar.value.toLowerCase().replace(/[^a-z]/g, '');
+                             } else {
+                              aceptarBusqueda.disabled=true;
+                              borrarTarjetas();
+                              urlPersonajes="https://rickandmortyapi.com/api/character?page=1";
+                              personajes= await traerPersonajes(urlPersonajes);
+                              habilitaDeshabilitaBoton(true,siguiente); 
+                              habilitaDeshabilitaBoton(false,anterior);
+                              mostrarPersonajes(personajes);
+                                    }
+})
+
+aceptarBusqueda.addEventListener('click',async ()=>{
+                            borrarTarjetas();
+                            habilitaDeshabilitaBoton(false,anterior);
+                            habilitaDeshabilitaBoton(true,siguiente);  
+                            console.log(inputBuscar.value);
+                            urlPersonajes=`https://rickandmortyapi.com/api/character/?name=${inputBuscar.value}`;
+                            personajes= await traerPersonajes(urlPersonajes);
+                            console.log(personajes);
+                            if (!personajes.error){
+                                if (personajes.info.pages==1){
+                                               habilitaDeshabilitaBoton(false,siguiente);  
+                                                             }                            
+                                mostrarPersonajes(personajes);
+                                                        } else {
+                                                          habilitaDeshabilitaBoton(false,siguiente);  
+                                                          habilitaDeshabilitaBoton(false,anterior); 
+                                                          const mensaje=document.createElement('h2');
+                                                          mensaje.textContent="NO HAY PERSONAJES CON ESE NOMBRE!!!";
+                                                          contenedor.appendChild(mensaje);
+                                                          console.log("no hay personajes con ese nombre!!!");
+                                                               }
+                
+})
+
 //evento escucha mouse pasando por las diferentes borrarTarjetas
 /*document.addEventListener('mouseover', ()=>{
     let dondeEstaAhora=event.target;
