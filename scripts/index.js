@@ -20,6 +20,7 @@ const generoMasculino=document.getElementById('generoMasculino');
 const generoSingenero=document.getElementById('generoSingenero');
 const generoDesconocido=document.getElementById('generoDesconocido');
 
+
 let STATUS="";
 let GENERO="";
 
@@ -96,6 +97,9 @@ filtroEstadoVivo.addEventListener('click',async()=>{
               urlPersonajes=`https://rickandmortyapi.com/api/character/?${STATUS}&${GENERO}`;
                }
   personajes= await traerPersonajes(urlPersonajes);
+  if (personajes.info.pages==1){
+                 habilitaDeshabilitaBoton(false,siguiente);  
+                               }        
   mostrarPersonajes(personajes);
   console.log(personajes.info.next)                                       
 })
@@ -117,6 +121,9 @@ filtroEstadoMuerto.addEventListener('click',async ()=>{
               urlPersonajes=`https://rickandmortyapi.com/api/character/?${STATUS}&${GENERO}`;
                }
   personajes= await traerPersonajes(urlPersonajes);
+  if (personajes.info.pages==1){
+    habilitaDeshabilitaBoton(false,siguiente);  
+                               }        
   mostrarPersonajes(personajes);
   console.log(personajes.info.next)                                       
 })
@@ -138,6 +145,9 @@ filtroEstadoDesconocido.addEventListener('click',async ()=>{
                         urlPersonajes=`https://rickandmortyapi.com/api/character/?${STATUS}&${GENERO}`;
                          }
   personajes= await traerPersonajes(urlPersonajes);
+  if (personajes.info.pages==1){
+    habilitaDeshabilitaBoton(false,siguiente);  
+                               }        
   mostrarPersonajes(personajes);
   console.log(personajes.info.next)                                                      
 })
@@ -326,10 +336,12 @@ aceptarBusqueda.addEventListener('click',async ()=>{
                 
 })
 
+
 //evento escucha mouse pasando por las diferentes borrarTarjetas
 /*document.addEventListener('mouseover', ()=>{
     let dondeEstaAhora=event.target;
     console.log(dondeEstaAhora);
+    //if (dondeEstaAhora==boton)
     //document.getElementById('elemento-actual').textContent=`El mouse actualmente esta sobre: ${dondeEstaAhora.tagName}`;
 })
 console.log();*/

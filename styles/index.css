@@ -12,12 +12,33 @@
   border: none; /* O el color de borde que desees */
 
   /* Transparencia u opacidad */
-  opacity: 0.7; /* Valor entre 0 (totalmente transparente) y 1 (totalmente opaco) */
+  opacity: 0.8; /* Valor entre 0 (totalmente transparente) y 1 (totalmente opaco) */
   /* O bien, para un fondo transparente con texto visible: */
   /* background-color: rgba(0, 0, 0, 0.3); /* Negro con 30% de opacidad */
-  /* color: white; /* Color del texto para que sea visible sobre el fondo */ */
+  /* color: white; /* Color del texto para que sea visible sobre el fondo */ 
 
   /* Otros estilos opcionales para mejorar la apariencia */
   cursor: pointer; /* Cambia el cursor al pasar por encima */
   transition: opacity 0.3s ease; /* Transición suave para la opacidad al pasar el mouse */
+}
+
+#ventanaModal {
+  /* Tamaño específico */
+  /*width: 300px; /* Ancho deseado */
+  /*height: 300px; /* Alto deseado */
+  max-width: 20%; /* Para que sea responsivo en pantallas pequeñas */
+  max-height: 40vh; /* Para que no ocupe toda la altura en pantallas grandes */
+
+  /* Bordes y otros estilos básicos */
+  border: 5px solid #ccc;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 5);
+
+  /* Opacidad del fondo (backdrop) */
+  /* Esto se aplica al ::backdrop pseudo-elemento */
+
+  /* Efecto de apertura (animación) */
+  animation: aparecer 0.8s ease-out;
+  transform-origin: center; /* Define el punto de origen para la transformación */
 }
