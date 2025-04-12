@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav id="MenuPrincipal" class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-fluid">
             <a class="navbar-brand"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"    aria-label="Toggle navigation">
@@ -61,16 +61,6 @@
                       <label class="form-check-label" for="estadoDesconocido">Desconocido</label>
                     </li>
                   </ul>
-                <!--<div class="dropdown">
-                  <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Filtrar Estado
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a id='estadoVivo' class="dropdown-item" href="#">Vivo</a></li>
-                    <li><a class="dropdown-item" href="#">Muerto</a></li>
-                    <li><a class="dropdown-item" href="#">Desconocido</a></li>
-                  </ul>
-                </div>-->
                  </ul>
                 </li>
                 <ul class="list-group">
@@ -117,11 +107,15 @@
 
 
       </div> 
-      <dialog id="ventanaModal">
-        <div id="cuerpoModal" class="modal-content" method="dialog">
-          
+      <dialog id="ventanaModal" class="card-body">
+        <div id="cajaBoton">
+          <button id="cerrarModal" aria-label="Cerrar ventana"><!-- class="text-center" -->
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-        <button id="cerrarModal" type="button" class="btn btn-dark">cerrar</button>
+        <div id="cuerpoModal" class="modal-content" method="dialog">
+
+        </div>
       </dialog>
       <script src="./bootstrap/js/bootstrap.bundle.min.js"></script> 
       <script src="./scripts/index.js" type="module"></script>      

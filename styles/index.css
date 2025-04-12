@@ -1,44 +1,83 @@
-.card{
-  box-shadow: 5px 5px 10px black;
+body{
+  background-image: url("../images/fondo7.jpg");
 }
 
-.boton-detalle {
-  /* Tamaño pequeño */
-  padding: 8px 12px; /* Ajusta el padding para controlar el tamaño */
-  font-size: 0.8em; /* Reduce el tamaño de la fuente si es necesario */
+#MenuPrincipal{
+   /*background-image: url("../images/Banner2.jpg");*/
+  background: transparent !important;
+}
 
-  /* Bordes redondeados */
-  border-radius: 15px; /* Un valor alto para crear bordes redondeados */
-  border: none; /* O el color de borde que desees */
+#busqueda{
+  background: transparent !important;
+}
 
-  /* Transparencia u opacidad */
-  opacity: 0.8; /* Valor entre 0 (totalmente transparente) y 1 (totalmente opaco) */
-  /* O bien, para un fondo transparente con texto visible: */
-  /* background-color: rgba(0, 0, 0, 0.3); /* Negro con 30% de opacidad */
-  /* color: white; /* Color del texto para que sea visible sobre el fondo */ 
+.card{
+  box-shadow: 5px 5px 10px black;
+  background: transparent;
+}
 
-  /* Otros estilos opcionales para mejorar la apariencia */
-  cursor: pointer; /* Cambia el cursor al pasar por encima */
-  transition: opacity 0.3s ease; /* Transición suave para la opacidad al pasar el mouse */
+#cajaBoton{
+  padding: 15px 15px 15px 15px;
+}
+
+#cerrarModal {
+  border: none;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  background: none;
+  padding: 0;
+  font-size: 2.5em;
+  cursor: pointer;
+  line-height: 1;
+  color: #888;
+  outline: none;
+}
+
+#cerrarModal:hover{
+ color:#333;
 }
 
 #ventanaModal {
-  /* Tamaño específico */
-  /*width: 300px; /* Ancho deseado */
-  /*height: 300px; /* Alto deseado */
-  max-width: 20%; /* Para que sea responsivo en pantallas pequeñas */
-  max-height: 40vh; /* Para que no ocupe toda la altura en pantallas grandes */
-
-  /* Bordes y otros estilos básicos */
-  border: 5px solid #ccc;
+  align-content: center;
+  max-width: 16rem; 
   border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 5);
-
-  /* Opacidad del fondo (backdrop) */
-  /* Esto se aplica al ::backdrop pseudo-elemento */
-
+  padding: 15px;
+  box-shadow: 0 0 200px rgba(0, 0, 0, 5);
+  position: relative;
   /* Efecto de apertura (animación) */
-  animation: aparecer 0.8s ease-out;
-  transform-origin: center; /* Define el punto de origen para la transformación */
+  /*animation: aparecer 0.8s ease-out;
+  /*transform-origin: center; /* Define el punto de origen para la transformación */
+}
+
+.cuerpoModal{
+  padding: 0px;
+  align-content: center;
+}
+.imagenModal{
+ box-shadow: 0px 0px 10px black;
+ border-radius: 10px;
+ padding: 1px;
+ /*transform: scale(1);*/
+}
+
+dialog::backdrop {
+  padding: 0px;
+  background-color: rgba(0, 0, 0, 0.5);  
+  filter: blur(5px); /* Intenta aplicar un desenfoque */
+}
+
+
+
+.navbar.bg-body-tertiary {
+  background-color: transparent !important;  
+}
+.navbar .container-fluid {
+  background-color: transparent !important;
+}
+.navbar .container-fluid .d-flex {
+  background-color: transparent !important;
+}
+#busqueda.form-control {
+  color: black; 
 }
