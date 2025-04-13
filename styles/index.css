@@ -81,3 +81,18 @@ dialog::backdrop {
 #busqueda.form-control {
   color: black; 
 }
+
+#menuEstados{
+  background-color: transparent !important;
+}
+
+#MenuFiltrado, #ElementoEstadoVivo, #ElementoEstadoMuerto, #ElementoEstadoDesconocido{
+  background-color: transparent !important;
+  border: none;
+}
+
+#ElementoGeneroFemenino, #ElementoGeneroMasculino, #ElementoGeneroSinGenero, #ElementoGeneroDesconocido{
+  background-color: transparent !important;
+  border: none;
+}
+

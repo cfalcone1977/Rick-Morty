@@ -41,42 +41,65 @@
                     </div>
                   </nav>
                 </li>
+
+            <!--<div class="btn-group">
+                  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Estado
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a id="estadoVivo" class="dropdown-item" type="radio" href="#">Vivo</a></li>
+                    <li><a id="estadoMuerto" class="dropdown-item" type="radio" href="#">Muerto</a></li>
+                    <li><a id="estadoDesconocido" class="dropdown-item" type="radio" href="#">Desconocido</a></li>
+                  </ul>
+                </div>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Genero
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a id="generoFemenino" class="dropdown-item" type="radio" href="#">Femenino</a></li>
+                    <li><a id="generoMasculino" class="dropdown-item" type="radio" href="#">Masculino</a></li>
+                    <li><a id="generoSingenero" class="dropdown-item" type="radio" href="#">Sin Genero</a></li>
+                    <li><a id="generoDesconocido" class="dropdown-item" type="radio" href="#">Desconocido</a></li>
+                  </ul>
+                </div>-->
+
                 <li>
                   <ul class="list-group">
-                    <li class="list-group-item">
+                    <li id="MenuFiltrado" class="list-group-item">
                       <input class="form-check-input me-1" type="checkbox" value="" id="filtradoGeneral">
                       <label class="form-check-label stretched-link" for="filtradoGeneral">Filtrado</label>
                     </li>
-                  <ul class="list-group">
-                    <li class="list-group-item">
+                  <ul id="menuEstados" class="list-group">
+                    <li id="ElementoEstadoVivo" class="list-group-item">
                       <input class="form-check-input me-0" type="radio" name="listGroupRadio" value="" id="estadoVivo">
                       <label class="form-check-label" for="estadoVivo">Vivo</label>
                     </li>
-                    <li class="list-group-item">
+                    <li id="ElementoEstadoMuerto" class="list-group-item">
                       <input class="form-check-input me-0" type="radio" name="listGroupRadio" value="" id="estadoMuerto">
                       <label class="form-check-label" for="estadoMuerto">Muerto</label>
                     </li>
-                    <li class="list-group-item">
+                    <li id="ElementoEstadoDesconocido" class="list-group-item">
                       <input class="form-check-input me-0" type="radio" name="listGroupRadio" value="" id="estadoDesconocido">
                       <label class="form-check-label" for="estadoDesconocido">Desconocido</label>
                     </li>
                   </ul>
                  </ul>
                 </li>
-                <ul class="list-group">
-                  <li class="list-group-item">
+                <ul id="menuGeneros" class="list-group">
+                  <li id="ElementoGeneroFemenino" class="list-group-item">
                     <input class="form-check-input me-0" type="radio" name="listGroupRadio2" value="" id="generoFemenino">
                     <label class="form-check-label" for="generoFemenino">Femenino</label>
                   </li>
-                  <li class="list-group-item">
+                  <li id="ElementoGeneroMasculino" class="list-group-item">
                     <input class="form-check-input me-0" type="radio" name="listGroupRadio2" value="" id="generoMasculino">
                     <label class="form-check-label" for="generoMasculino">Masculino</label>
                   </li>
-                  <li class="list-group-item">
+                  <li id="ElementoGeneroSinGenero" class="list-group-item">
                     <input class="form-check-input me-0" type="radio" name="listGroupRadio2" value="" id="generoSingenero">
                     <label class="form-check-label" for="generoSingenero">Sin Genero</label>
                   </li>
-                  <li class="list-group-item">
+                  <li id="ElementoGeneroDesconocido" class="list-group-item">
                     <input class="form-check-input me-0" type="radio" name="listGroupRadio2" value="" id="generoDesconocido">
                     <label class="form-check-label" for="generoDesconocido">Desconocido</label>
                   </li>              
