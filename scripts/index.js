@@ -8,8 +8,6 @@ import {generoFemenino, generoMasculino, generoSingenero, generoDesconocido} fro
 import { FiltrarEstadoVivos, FiltrarEstadoMuertos, FiltrarEstadoDesconocidos, IngresoNombrePersonajes} from "../lib/filtros.js";
 import { BotonAceptarBusqueda } from "../lib/filtros.js";
 
-let STATUS="";
-let GENERO="";
 
 let urlPersonajes="https://rickandmortyapi.com/api/character?page=1";
 export let personajes= await traerPersonajes(urlPersonajes);
@@ -29,19 +27,16 @@ anterior.addEventListener('click', async()=>{
 
 filtroEstadoVivo.addEventListener('click', async() =>{
    personajes= await FiltrarEstadoVivos(personajes,urlPersonajes);
-   console.log("INDEX estado "+STATUS+"genero "+GENERO);
 });
 
 
 filtroEstadoMuerto.addEventListener('click', async() =>{
   personajes= await FiltrarEstadoMuertos(personajes,urlPersonajes);
-  console.log("INDEX estado "+STATUS+"genero "+GENERO);
 });
 
 
 filtroEstadoDesconocido.addEventListener('click', async() =>{
   personajes = await FiltrarEstadoDesconocidos(personajes,urlPersonajes);
-  console.log("INDEX estado "+STATUS+"genero "+GENERO);
 });
 
 

@@ -1,10 +1,8 @@
 
 export async function traerPersonajes(pagina) {
     try {
-        //console.log(pagina);
         const response = await fetch(pagina);
         const data = await response.json();
-        //console.log(data.status);
         if (data.status>=400){
                                          throw new Error(data.errorMessages[0]);
                              }
